@@ -1,0 +1,214 @@
+/* إعادة تعيين الأنماط الأساسية */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* لون الخلفية والهوامش */
+body {
+    background: linear-gradient(to bottom, #083358, #1b435d);
+    padding: 20px;
+}
+
+/* النصوص الرئيسية */
+.text {
+    color: #f8f8f8;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.text h3 {
+    margin-bottom: 15px;
+    font-size: 26px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.text p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* استايل النموذج */
+form {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+form input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    caret-color: white;
+    color: white;
+    border-radius: 4px;
+    height: 40px;
+    font-size: 16px;
+    transition: transform 0.3s, background 0.3s;
+    margin-top: 15px;
+}
+
+form input:focus {
+    outline: none;
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* تخصيص المدخلات الصغيرة */
+.input input {
+    width: calc(20% - 10px);
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* استايل الأزرار */
+button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    color: white;
+    background: #0078d7;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 45px;
+    font-size: 16px;
+    transition: background 0.3s, letter-spacing 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background: #005bb5;
+    letter-spacing: 1px;
+    transform: scale(1.05);
+}
+
+.input #total {
+    width: 70px;
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 6px;
+    background: #ff8d57;
+    margin: 0;
+    position: relative;
+}
+
+#total::before {
+    content: 'Total: ';
+    color: white;
+}
+
+/* تصميم البحث */
+.search {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search button {
+    width: 48%;
+}
+
+/* تصميم الجدول */
+table {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+table th, table td {
+    padding: 15px;
+    color: white;
+}
+
+table th {
+    text-transform: uppercase;
+    background: #0078d7;
+}
+
+td, td button {
+    color: #ffffffc2;
+    transition: color 0.2s, background 0.2s;
+}
+
+td button:hover {
+    color: white;
+    background: #0078d7;
+}
+
+/* تفاعلات الرسوم المتحركة */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تحسين الاستجابة */
+@media (max-width: 1200px) {
+    .input input {
+        width: calc(25% - 10px);
+    }
+}
+
+@media (max-width: 992px) {
+    .input input {
+        width: calc(33.33% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    form, table {
+        width: 100%;
+    }
+    .search {
+        flex-direction: column;
+    }
+    .search button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .input input {
+        width: calc(50% - 10px);
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    form {
+        padding: 15px;
+    }
+    form input, button {
+        height: 35px;
+        font-size: 14px;
+    }
+    table th, table td {
+        padding: 10px;
+    }
+    .input input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
